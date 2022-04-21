@@ -1,0 +1,73 @@
+{
+	"Caption": "Update Products",
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/ProductCatalog/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "Save",
+				"OnPress": "/ProductCatalog/Actions/Products/Products_UpdateEntity.action"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Caption": "",
+					"Controls": [
+						{
+							"Caption": "ProductID",
+							"_Name": "ProductID",
+							"Value": "{ProductID}",
+							"KeyboardType": "Number",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"IsEditable": false
+						},
+						{
+							"Caption": "ProductName",
+							"_Name": "ProductName",
+							"Value": "{ProductName}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "UnitsInStock",
+							"_Name": "UnitsInStock",
+							"Value": "{UnitsInStock}",
+							"KeyboardType": "Number",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Category_CategoryID",
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"IsPickerDismissedOnSelection": true,
+							"IsSelectedSectionEnabled": true,
+							"PickerItems": {
+								"DisplayValue": "{CategoryName}",
+								"ReturnValue": "{CategoryID}",
+								"Target": {
+									"EntitySet": "Categories",
+									"Service": "/ProductCatalog/Services/service1.service",
+									"UniqueIdType": "Integer"
+								}
+							},
+							"Value": "{Category_CategoryID}",
+							"_Name": "Category_CategoryID",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					]
+				}
+			],
+			"_Name": "PageOneFormCell",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Products_Edit",
+	"PrefersLargeCaption": true
+}

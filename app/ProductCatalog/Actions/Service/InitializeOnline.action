@@ -1,0 +1,10 @@
+{
+    "Service": "/ProductCatalog/Services/service1.service",
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "OnSuccess": "/ProductCatalog/Actions/Service/InitializeOnlineSuccessMessage.action",
+    "OnFailure": "/ProductCatalog/Actions/Service/InitializeOnlineFailureMessage.action",
+    "ActionResult": {
+        "_Name": "init"
+    }
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:DataServices>
+    <Schema Namespace="LCAP2204ShareService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="Categories" EntityType="LCAP2204ShareService.Categories">
+          <NavigationPropertyBinding Path="Products" Target="Products"/>
+        </EntitySet>
+        <EntitySet Name="Products" EntityType="LCAP2204ShareService.Products">
+          <NavigationPropertyBinding Path="Category" Target="Categories"/>
+        </EntitySet>
+      </EntityContainer>
+      <EntityType Name="Categories">
+        <Key>
+          <PropertyRef Name="CategoryID"/>
+        </Key>
+        <Property Name="CategoryID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="CategoryName" Type="Edm.String" MaxLength="100"/>
+        <Property Name="Description" Type="Edm.String" MaxLength="100"/>
+        <NavigationProperty Name="Products" Type="Collection(LCAP2204ShareService.Products)" Partner="Category"/>
+      </EntityType>
+      <EntityType Name="Products">
+        <Key>
+          <PropertyRef Name="ProductID"/>
+        </Key>
+        <Property Name="ProductID" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="ProductName" Type="Edm.String" MaxLength="100"/>
+        <Property Name="UnitsInStock" Type="Edm.Int32"/>
+        <NavigationProperty Name="Category" Type="LCAP2204ShareService.Categories" Partner="Products">
+          <ReferentialConstraint Property="Category_CategoryID" ReferencedProperty="CategoryID"/>
+        </NavigationProperty>
+        <Property Name="Category_CategoryID" Type="Edm.Int32"/>
+      </EntityType>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

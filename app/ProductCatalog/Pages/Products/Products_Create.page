@@ -1,0 +1,68 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/ProductCatalog/Actions/CloseModalPage_Cancel.action",
+				"Position": "Left",
+				"SystemItem": "Cancel"
+			},
+			{
+				"OnPress": "/ProductCatalog/Actions/Products/Products_CreateEntity.action",
+				"Position": "Right",
+				"SystemItem": "Save"
+			}
+		]
+	},
+	"Caption": "Create Products",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "ProductID",
+							"KeyboardType": "Number",
+							"_Name": "ProductID",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "ProductName",
+							"_Name": "ProductName",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "UnitsInStock",
+							"KeyboardType": "Number",
+							"_Name": "UnitsInStock",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Category_CategoryID",
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": false,
+							"IsEditable": true,
+							"IsPickerDismissedOnSelection": true,
+							"IsSelectedSectionEnabled": true,
+							"PickerItems": {
+								"DisplayValue": "{CategoryName}",
+								"ReturnValue": "{CategoryID}",
+								"Target": {
+									"EntitySet": "Categories",
+									"Service": "/ProductCatalog/Services/service1.service",
+									"UniqueIdType": "Integer"
+								}
+							},
+							"_Name": "Category_CategoryID",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						}
+					]
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Products_Create",
+	"PrefersLargeCaption": true
+}
