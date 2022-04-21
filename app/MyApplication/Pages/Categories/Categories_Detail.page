@@ -1,0 +1,83 @@
+{
+	"Caption": "Categories",
+	"ActionBar": {
+		"Items": []
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"DetailImage": "",
+						"HeadlineText": "{CategoryName}",
+						"Subhead": "{CategoryID}",
+						"Tags": [],
+						"BodyText": "",
+						"Footnote": "",
+						"Description": "{Description}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "CategoryID",
+							"Value": "{CategoryID}"
+						},
+						{
+							"KeyName": "CategoryName",
+							"Value": "{CategoryName}"
+						},
+						{
+							"KeyName": "Description",
+							"Value": "{Description}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"Header": {
+						"Caption": "Products"
+					},
+					"ObjectCell": {
+						"AccessoryType": "disclosureIndicator",
+						"Description": "{UnitsInStock}",
+						"DetailImage": "",
+						"DetailImageIsCircular": false,
+						"Icons": [],
+						"StatusImage": "",
+						"Title": "{ProductName}",
+						"Footnote": "{Category_CategoryID}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{ProductID}",
+						"SubstatusText": "",
+						"OnPress": "/MyApplication/Actions/Products/NavToProducts_Detail.action"
+					},
+					"Target": {
+						"EntitySet": "{#Property:@odata.readLink}/Products",
+						"Service": "/MyApplication/Services/service1.service"
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"DataSubscriptions": [
+				"Products"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Categories_Detail",
+	"PrefersLargeCaption": true
+}

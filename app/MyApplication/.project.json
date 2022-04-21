@@ -1,0 +1,67 @@
+{
+	"Credential": "cf",
+	"CF": {
+		"Target": "",
+		"Organization": "",
+		"Space": "",
+		"Deploy": {
+			"Description": "My SAP application",
+			"WebClient": {
+				"Runtime": "preview",
+				"URL": ""
+			},
+			"Destination": [
+				{
+					"CF": "LCAP2204Share-app-srv",
+					"MDK": "../service/LCAP2204Share/",
+					"URL": ""
+				}
+			]
+		}
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "",
+		"AppId": "lcap.LCAP2204Share.MyApplication",
+		"Destination": []
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": ""
+	},
+	"LCAP": {
+		"FullName": "LCAP2204Share_MyApplication",
+		"Service": [
+			{
+				"mdk": "MyApplication/Services/service1.service",
+				"cap": {
+					"name": "LCAP2204ShareService",
+					"sourcePath": "srv/service.cds",
+					"path": "/service/LCAP2204Share/",
+					"entryPath": "/service/LCAP2204Share",
+					"destination": "LCAP2204Share-app-srv",
+					"value": "0"
+				},
+				"links": [
+					{
+						"entity": "LCAP2204ShareService.Categories",
+						"files": [
+							"MyApplication/Pages/Categories/Categories_List.page"
+						]
+					},
+					{
+						"entity": "LCAP2204ShareService.Products",
+						"files": [
+							"MyApplication/Pages/Products/Products_List.page"
+						]
+					}
+				]
+			}
+		],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	}
+}

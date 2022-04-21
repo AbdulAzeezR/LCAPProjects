@@ -1,0 +1,9 @@
+{
+    "DestinationName": "../service/LCAP2204Share/",
+    "OfflineEnabled": false,
+    "LanguageURLParam": "",
+    "OnlineOptions": {},
+    "PathSuffix": "",
+    "SourceType": "Cloud",
+    "ServiceUrl":""
+}
