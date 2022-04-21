@@ -6,4 +6,7 @@ service LCAP2204ShareService
 {
     entity Categories as
         projection on my.Categories;
+
+    entity Products as
+        projection on my.Products;
 }
